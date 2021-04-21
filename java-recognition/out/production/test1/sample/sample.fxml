@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
+    <Text boundsType="LOGICAL_VERTICAL_CENTER" layoutX="118.0" layoutY="399.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Original Image" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="209.33331298828125">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Text>
+    <Text boundsType="LOGICAL_VERTICAL_CENTER" layoutX="701.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result Thresholding" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="162.66668701171875">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Text>
+    <Text fx:id="thresholdLabel" boundsType="LOGICAL_VERTICAL_CENTER" layoutX="1049.0" layoutY="566.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Threshold" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="162.66668701171875">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Text>
+    <Slider id="thresholdValue" fx:id="thresholdValue" blendMode="SRC_ATOP" blockIncrement="5.0" cache="true" layoutX="1064.0" layoutY="601.0" majorTickUnit="16.0" max="255.0" minorTickCount="1" prefHeight="53.0" prefWidth="170.0" showTickLabels="true" snapToTicks="true" value="130.0">
+        <cursor>
+            <Cursor fx:constant="DEFAULT" />
+        </cursor>
+    </Slider>
+    <ImageView fx:id="original" fitHeight="225.0" fitWidth="367.0" layoutX="75.0" layoutY="424.0" pickOnBounds="true" preserveRatio="true" />
+    <Button fx:id="thresholdingButton" layoutX="742.0" layoutY="620.0" mnemonicParsing="false" onAction="#handlePerformThresholdingButton" text="Perform thresholding" />
+    <CheckBox fx:id="erosion" layoutX="908.0" layoutY="604.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="67.0" text="Erosion" />
+    <CheckBox fx:id="blur" layoutX="994.0" layoutY="605.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" text="Blur" />
+    <Button fx:id="kMeansButton" layoutX="744.0" layoutY="574.0" mnemonicParsing="false" onAction="#handlePerformKMeansButton" text="Perform k-means" />
+    <Text fx:id="resultLabelThreshold" boundsType="LOGICAL_VERTICAL_CENTER" layoutX="902.0" layoutY="46.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="129.77767944335938">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Text>
+    <Button fx:id="openImageButton" layoutX="507.0" layoutY="584.0" mnemonicParsing="false" onAction="#handleOpeningImage" prefHeight="44.0" prefWidth="199.0" text="Open image" />
+    <Text boundsType="LOGICAL_VERTICAL_CENTER" layoutX="129.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result K-Means" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="162.66668701171875">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Text>
+    <ImageView fx:id="thresholded" fitHeight="272.0" fitWidth="477.0" layoutX="641.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true" />
+    <ImageView fx:id="kmeans" fitHeight="272.0" fitWidth="477.0" layoutX="36.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true" />
+    <Text fx:id="resultLabelKmeans" boundsType="LOGICAL_VERTICAL_CENTER" layoutX="316.0" layoutY="47.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="99.66666666666674">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Text>
+    <!--      <Button fx:id="otsuMethod" layoutX="719.0" layoutY="482.0" mnemonicParsing="false" onAction="#handlePerformOtsu" text="Perform Otsu's method" />-->
+</AnchorPane>

@@ -39,5 +39,6 @@ def main():
 	else:
 		print("\n>> Dataset not found\n")
 
+# python main.py --dataset=craquelures --gpu --test
 if __name__ == "__main__":
 	main()
