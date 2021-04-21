@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="test">
+    <output-path>$PROJECT_DIR$/out/artifacts/test</output-path>
+    <properties id="ant-preprocessing">
+      <options enabled="true" />
+    </properties>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="sample.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="nativeBundle" value="all" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="JavaFXApp.jar">
+        <element id="library" level="project" name="opencv-411" />
+        <element id="module-output" name="java-recognition" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

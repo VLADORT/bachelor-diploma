@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
+    <children>
+        <Text boundsType="LOGICAL_VERTICAL_CENTER" layoutX="124.0" layoutY="40.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Original Image" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="209.33331298828125">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Text>
+        <Text boundsType="LOGICAL_VERTICAL_CENTER" layoutX="671.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="162.66668701171875">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Text>
+        <Text boundsType="LOGICAL_VERTICAL_CENTER" layoutX="807.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Threshold" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="162.66668701171875">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Text>
+        <Slider id="thresholdValue" fx:id="thresholdValue" blendMode="SRC_ATOP" blockIncrement="5.0" cache="true" layoutX="803.0" layoutY="536.0" majorTickUnit="16.0" max="255.0" minorTickCount="1" onDragDone="#handlePerformThresholdingButton" prefHeight="53.0" prefWidth="170.0" showTickLabels="true" snapToTicks="true" value="130.0">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </Slider>
+        <ImageView fx:id="original" fitHeight="306.0" fitWidth="468.0" layoutX="14.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView id="originalImage" fx:id="result" fitHeight="306.0" fitWidth="468.0" layoutX="518.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" />
+        <Button fx:id="thresholdingButton" layoutX="769.0" layoutY="481.0" mnemonicParsing="false" onAction="#handlePerformThresholdingButton" text="Perform thresholding" />
+        <CheckBox fx:id="erosion" layoutX="624.0" layoutY="533.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="67.0" text="Erosion" />
+        <CheckBox fx:id="blur" layoutX="725.0" layoutY="533.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" text="Blur" />
+        <Button fx:id="kMeansButton" layoutX="624.0" layoutY="481.0" mnemonicParsing="false" onAction="#handlePerformKMeansButton" text="Perform k-means" />
+        <BorderPane fx:id="dragDashboard" layoutX="45.0" layoutY="495.0" onDragDropped="#handleDraggingFile" onDragOver="#onDragFileDetected" prefHeight="93.0" prefWidth="550.0" style="-fx-background-color: #ddd;">
+            <center>
+                <Label fx:id="dragDashboardLabel" alignment="CENTER" prefHeight="30.0" prefWidth="593.0" text="Drag the image here" textFill="#fe0000" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+            </center>
+        </BorderPane>
+        <Text fx:id="resultLabel" boundsType="LOGICAL_VERTICAL_CENTER" layoutX="659.0" layoutY="435.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="209.33331298828125">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Text>
+        <!--      <Button fx:id="otsuMethod" layoutX="719.0" layoutY="482.0" mnemonicParsing="false" onAction="#handlePerformOtsu" text="Perform Otsu's method" />-->
+    </children>
+</AnchorPane>
